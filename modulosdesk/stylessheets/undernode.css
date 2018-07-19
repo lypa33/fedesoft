@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,800');
+
+
+[data-flexbox="flex"]
+{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+body
+{
+    font-family: 'Open Sans', sans-serif !important;
+    background-color: #f2f2f2;
+    color: #43525A;
+}
+ul.nav
+{
+    box-sizing: border-box;
+    position: relative;
+}
+ul.nav
+li
+{
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+ul.nav
+li
+a.dropdown
+{
+    border-left-style: solid;
+    border-left-color: #43525A;
+    border-left-width: 0.03em;
+}
+
+ul.nav
+li
+a
+{
+    display: block;
+    color: #43525A !important;
+    font-size: 0.7em;
+}
+
+ul.nav
+li
+a.enfasis
+{
+    font-weight: 800;
+}
+
+ul.nav
+li
+a
+i
+{
+    display: block;
+    font-size: 2em;
+    padding-left: 0.7em;
+}
+
+.row.row-header
+{
+    padding: 0.2em;
+}
+
+.row-showcase
+{
+    background-image: url('../images/hero-new-desk--cut.cb44eae5.png');
+    background-size: cover;
+    background-position-x: 30em;
+    background-repeat: no-repeat;
+    padding: 10em 1em 10em 1em;
+}
+
+button 
+{
+    color:#fff;
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: #2D2D2D;
+    border:0;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+button:focus{
+    outline: 0;
+    box-sizing: border-box;
+}
+
+
+.container-buttons
+button:nth-child(1)
+{
+    top:0.5em;
+    background-color: #28A5BE;
+    transform: scale(1.1);
+    padding: 1em 1.5em 1em 1.5em;
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.container-buttons
+button:nth-child(2)
+{
+    padding: 0.5em 1.8em 0.5em 3em;
+    transition: all 0.2s ease;
+    z-index: 500;
+}
+
+.container-buttons
+button:nth-child(1):hover
+{
+    transform: scale(1.2);
+}
+.container-buttons
+button:nth-child(2):hover
+{
+    transform: translateX(0.5em);
+}
+
+.row.main-one
+.col:nth-child(1)
+{
+    background-image: url('../images/fotka-surface-modules-02.ce649369.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row.main-one
+.col:nth-child(2)
+{
+    background-color: #fff;
+    padding: 8em 4em 8em 4em;
+}
+.row.main-one
+span
+{
+    display: block;
+    font-size: 0.9em;
+    text-align: justify;
+}
+.row.main-one
+button
+{
+    margin-top: 2em;
+}
+
+.super-practical
+{
+    padding: 3em;
+}
+
+.super-practical
+span
+{
+    display: block;
+    font-size: 0.9em;
+    text-align: center;
+}
