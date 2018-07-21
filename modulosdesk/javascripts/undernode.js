@@ -3,13 +3,11 @@
 
 	var o = v();
 
-	o.print("Log");
+	o.print("Modulos Desk - git clone https://www.modulosdesk.com/");
 	o.version();
 
-	document.undernode = "Undernode LLC";
-	console.log(document.undernode);
-	//console.log(o.print("Log"));
-	//console.log(o.version());
+	//document.undernode = "Undernode LLC";
+	//console.log(document.undernode);
 
 })(window, function() {
 	

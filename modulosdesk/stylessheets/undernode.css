@@ -17,6 +17,7 @@ ul.nav
 {
     box-sizing: border-box;
     position: relative;
+    width: 100%;
 }
 ul.nav
 li
@@ -40,6 +41,10 @@ a
     display: block;
     color: #43525A !important;
     font-size: 0.7em;
+    text-decoration: none;
+    border-bottom-width: 0.2em;
+    border-bottom-style:  solid;
+    border-color: transparent;
 }
 
 ul.nav
@@ -47,6 +52,9 @@ li
 a.enfasis
 {
     font-weight: 800;
+    border-bottom-width: 0.2em;
+    border-bottom-style:  solid;
+    border-color: #28A5BE;
 }
 
 ul.nav
@@ -332,4 +340,331 @@ span
 {
     display: block;
     margin-top: 1em;
+}
+
+
+.main-four
+{
+    margin-top: 35em;
+}
+
+.main-four
+.col:nth-child(2)
+div
+h1
+{
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.main-four
+.col:nth-child(2)
+div
+span
+{
+    padding-top: 3em;
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: 500;
+    display: block;
+}
+
+
+.main-four
+.col:nth-child(1)
+{
+    padding-left: 0;  
+}
+.main-four
+.col:nth-child(3)
+{
+
+    padding-right: 0;
+}
+
+.sideleft,
+.sideright
+{
+    display: block;
+    width: 100%;
+    height: 25em;
+}
+
+.sideleft
+{
+    background-image: url('../images/module-cabling-hole--aeon.ee835ce4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 450%;
+    transition: all 0.5s ease;
+}
+.sideright
+{
+    background-image: url('../images/module-cabling-hole--heritage.64bc524e.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -350%;
+    transition: all 0.5s ease;
+}
+
+.main-four:hover
+.sideleft
+{
+    background-position: 350%;
+}
+
+.main-four:hover
+.sideright
+{
+    background-position: -250%;
+}
+
+.ctn-btn--learn-more
+{
+    margin-top: 2em;
+}
+
+.ctn-btn--learn-more
+button
+{
+    background-color: transparent;
+    color:#28A5BE;
+    border: 0.1em solid #28A5BE;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.ctn-btn--learn-more
+button:hover
+{
+    background-color: #28A5BE;
+    color:#fff;
+}
+
+
+.main-five
+{
+    background-image: linear-gradient(-90deg, #1BA5C0 0%, #0C6B8C 100%);
+
+    margin-top: 6em;
+    height: 33em;
+}
+
+.main-five
+.col:nth-child(1)
+> div
+{
+    height: 100%;
+}
+
+.main-five
+h1, .main-five
+span
+{
+    color: #fff;
+    display: block;
+    padding-bottom: 2em;
+}
+
+.main-five
+.bg-right-mr
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url('../images/configurator-promo.b94388e3.png');
+    background-position: -5%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main-six
+{
+    margin-top: 3em;
+    padding: 1em;
+}
+
+.main-six
+h1, .main-six span
+{
+    display: block;
+}
+
+.main-six
+h1
+{
+    font-size: 1.9em;
+}
+.main-six
+span
+{
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+.main-six
+.col
+span + span
+{
+    padding-top: 1em;
+    color:#28A5BE;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+.main-six
+.col
+span + span + div
+{
+    padding-top: 1em;
+}
+.main-six
+.col
+span +
+span + 
+div >
+form
+input
+{
+    padding: 0.41em;
+    width: 25em;
+}
+
+.main-six
+.col
+span +
+span + 
+div >
+form
+button
+{
+    background-color:#28A5BE;
+}
+
+.main-seven
+{
+    margin-top: 6em;
+}
+
+.main-seven
+.col:nth-child(1)
+img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.main-seven
+.col:nth-child(2)
+img
+{
+    width: 100%;
+    height: 100%;
+}
+.main-seven
+.col:nth-child(2)
+.container-fluid
+{
+    height: 100%;
+}
+
+.main-seven
+.col:nth-child(2)
+.container-fluid
+.row
+{
+    height: 50%;
+}
+.fix-height
+{
+    padding-top: 2em;
+}
+
+.main-eight
+{
+    background-color: #BEEADF;
+    color: #43525A;
+    height: 35em;
+    margin-top: 5em;
+}
+.main-eight
+.container
+{
+    background-image: url('../images/environmentally-responsible.70f9b2b1.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.main-eight
+.container
+.row
+{
+    padding-top: 5em;
+}
+.main-eight
+.container
+.row
+h1
+{
+    font-size: 1.9em;
+    text-align: center;
+    font-weight: 400;
+}
+.main-eight
+.container
+.row
+span
+{
+    font-size: 0.9em;
+    text-align: center;
+    display: block;
+    font-weight: 400;
+}
+.footer
+{
+    margin-top: 1.5em;
+    padding: 3em;
+}
+
+.footer
+.nav-footer
+{
+    list-style: none;
+    padding: 0;
+}
+.footer
+.nav-footer
+li:nth-child(1)
+{
+    font-size: 0.8em;
+    padding-bottom: 1em;
+}
+
+.footer
+.row
+.col
+span
+{
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+    padding: 3em;
+    color: #6f8794;
+}
+.footer
+.row:nth-child(3)
+.col
+span
+{
+    padding: 0em;
+
+}
+
+.footer
+.row:nth-child(4)
+.col
+img
+{
+    width: 10em;
+    height: 5em;
 }
