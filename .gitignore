@@ -1,3 +1,5 @@
 stop-drug/package-lock.json
 stop-drug/node_modules
 sass/node_modules
+api/node_modules
+api/*-lock.json
