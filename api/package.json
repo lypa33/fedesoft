@@ -1,0 +1,18 @@
+{
+  "name": "undernode",
+  "version": "1.0.0",
+  "description": "undernode mariadb test connection",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "undernode"
+  ],
+  "author": "UnderNode LLC",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "sprintf-js": "^1.1.1"
+  }
+}
