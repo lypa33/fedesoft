@@ -1,2 +1,0 @@
-# stop-drug
-stop drug
