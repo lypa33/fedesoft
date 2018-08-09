@@ -14,10 +14,11 @@
   "dependencies": {
     "asciimo": "^0.3.1",
     "chalk": "^2.4.1",
+    "debug": "^3.1.0",
     "express": "^4.16.3",
+    "hawk": "^7.0.7",
     "http-errors": "^1.7.0",
     "js-base64": "^2.4.8",
-    "mapbox-gl": "^0.47.0",
     "moment": "^2.22.2",
     "morgan": "^1.9.0",
     "sprintf-js": "^1.1.1"

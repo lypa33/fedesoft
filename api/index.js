@@ -1,9 +1,13 @@
-const httpError = require('http-errors')
-const rest      = require("express");
-const base64    = require("js-base64").Base64;
-const logger    = require("./libs/logger");
-const make_string   = require("sprintf-js").sprintf;
-
+const httpError = require("http-errors");
+const rest = require("express");
+const make_string = require("sprintf-js").sprintf;
+const auth = require("hawk");
+const logger = require("./libs/logger");
+const register = require("./routes/register");
+const home = require("./routes/home");
+const users = require("./routes/users");
+const morgan = require("morgan");
+const server = require("http");
 const app = rest();
 
 /**
@@ -16,63 +20,19 @@ const app = rest();
  *          GET => /USERS  Wrong
  */
 
-app.enable("case sensitive routing");
-
+app.enable('case sensitive routing');
+app.disable('x-powered-by');
 /**
  * Obligamos al cliente a realizar peticiones
  * con URL's absolutas
- * 
+ *
  * Ejemplo:
  *          GET => /users Good
- *          GET => /users/ Wrong 
+ *          GET => /users/ Wrong
  */
 
-app.set('strict routing', true)
+app.set("strict routing", true);
 
-
-
-app.get("/", (req, res) => {
-  res.status(301);
-  res.sendFile("views/hello_world.html", { root: __dirname });
-  //res.json({"error":"Hello world!"})
-});
-
-app.get("/users/:nickname", (req, res) => {
-  if (typeof req.query.key === "undefined") {
-    res.status(511);
-    //res.sendFile("views/access_denied.html", { root: __dirname });
-    res.json({"error":"Access denied"})
-    logger("API Key is undefined (not provided)");
-    return;
-  }
-
-  logger(make_string("API Key: %s", req.query.key));
-
-  logger(make_string("User: %s", req.params.nickname));
-
-  const str = base64.encode(req.query.key);
-
-  res.status(200);
-  res.send("OK " + str);
-});
-
-app.get('/register', (req, res) => {
-    res.send("OK")
-})
-/**
- *  HTTP Logger
- */
-app.use((req, res, next) =>{
-    logger(
-        make_string('Protocol: %s - Method: %s - URL: %s - SSL?: %s', 
-                req.protocol, 
-                req.method, 
-                req.url, 
-                (req.secure ? 'YES': 'NO')
-        )
-    )
-    next()
-})
 /**
  * JSON
  */
@@ -80,13 +40,20 @@ app.use(rest.json());
 /**
  * Encode URL's
  */
-app.use(rest.urlencoded({ extended: true }))
+app.use(rest.urlencoded({ extended: true }));
+
+
+app.use(morgan("dev"));
+app.use("/register", register);
+app.use("/users", users);
+app.use("/", home);
+
 /*
-  Validar errores
+Validar errores
 */
 app.use((req, res, next) => {
   next(httpError(404));
-})
+});
 
 /**
  * Gestionar errores
@@ -96,20 +63,50 @@ app.use((err, req, res, next) => {
     case 404:
       res.status(404);
       //res.sendFile('views/404.html', { root: __dirname });
-      res.json({"error":"Not found"})
+      res.json({ error: "Not found" });
       break;
     default:
-      res.status(err.status || 500)
+      res.status(err.status || 500);
       //res.sendFile('views/internal_error.html', { root: __dirname });
-      res.json({"error":"An error occured", "message": err.stack})
+      res.json({ error: "An error occured", message: err.stack });
       break;
   }
-})
+});
 
-app.listen(3002, () => {
-  logger("Server running");
+const APIServer = server.createServer(app);
+
+APIServer.listen(3002, "192.168.5.184");
+
+APIServer.on("listening", () => {
+  logger("Server start success.");
   logger(make_string("Platform: %s", process.platform));
   logger(make_string("Arch: %s", process.arch));
   logger(make_string("App path: %s", process.cwd()));
   logger(make_string("PID: %s", process.pid));
-})
+  logger("Listening client for now...")
+});
+
+APIServer.on("connection", (c) => {
+  logger(make_string('Connection incomming from: %s:%s', c.remoteAddress, c.remotePort))
+});
+
+APIServer.on("error", (error) => {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+});
