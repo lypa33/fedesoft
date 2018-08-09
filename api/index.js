@@ -12,16 +12,29 @@ const app = rest();
  * peticiones con URL's correctas y especificas
  *
  * Ejemplo:
- *          GET => /users/  Good
- *          GET => /USERS/  Wrong
+ *          GET => /users  Good
+ *          GET => /USERS  Wrong
  */
 
 app.enable("case sensitive routing");
 
+/**
+ * Obligamos al cliente a realizar peticiones
+ * con URL's absolutas
+ * 
+ * Ejemplo:
+ *          GET => /users Good
+ *          GET => /users/ Wrong 
+ */
+
+app.set('strict routing', true)
+
+
+
 app.get("/", (req, res) => {
   res.status(301);
-  //res.sendFile("views/hello_world.html", { root: __dirname });
-  res.json({"error":"Hello world!"})
+  res.sendFile("views/hello_world.html", { root: __dirname });
+  //res.json({"error":"Hello world!"})
 });
 
 app.get("/users/:nickname", (req, res) => {
@@ -43,6 +56,9 @@ app.get("/users/:nickname", (req, res) => {
   res.send("OK " + str);
 });
 
+app.get('/register', (req, res) => {
+    res.send("OK")
+})
 /**
  *  HTTP Logger
  */
