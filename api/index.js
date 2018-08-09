@@ -43,12 +43,34 @@ app.get("/users/:nickname", (req, res) => {
   res.send("OK " + str);
 });
 
+/**
+ *  HTTP Logger
+ */
+app.use((req, res, next) =>{
+    logger(
+        make_string('Protocol: %s - Method: %s - URL: %s - SSL?: %s', 
+                req.protocol, 
+                req.method, 
+                req.url, 
+                (req.secure ? 'YES': 'NO')
+        )
+    )
+    next()
+})
+/**
+ * JSON
+ */
+app.use(rest.json());
+/**
+ * Encode URL's
+ */
+app.use(rest.urlencoded({ extended: true }))
 /*
   Validar errores
 */
 app.use((req, res, next) => {
   next(httpError(404));
-});
+})
 
 /**
  * Gestionar errores
@@ -63,10 +85,10 @@ app.use((err, req, res, next) => {
     default:
       res.status(err.status || 500)
       //res.sendFile('views/internal_error.html', { root: __dirname });
-      res.json({"error":"An error occured"})
+      res.json({"error":"An error occured", "message": err.stack})
       break;
   }
-});
+})
 
 app.listen(3002, () => {
   logger("Server running");
@@ -74,4 +96,4 @@ app.listen(3002, () => {
   logger(make_string("Arch: %s", process.arch));
   logger(make_string("App path: %s", process.cwd()));
   logger(make_string("PID: %s", process.pid));
-});
+})

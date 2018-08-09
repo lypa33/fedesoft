@@ -16,6 +16,7 @@
     "express": "^4.16.3",
     "http-errors": "^1.7.0",
     "js-base64": "^2.4.8",
+    "moment": "^2.22.2",
     "morgan": "^1.9.0",
     "sprintf-js": "^1.1.1"
   }
