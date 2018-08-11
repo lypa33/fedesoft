@@ -75,7 +75,7 @@ app.use((err, req, res, next) => {
 
 const APIServer = server.createServer(app);
 
-APIServer.listen(3002, "192.168.5.184");
+APIServer.listen(3002);
 
 APIServer.on("listening", () => {
   logger("Server start success.");
@@ -95,15 +95,15 @@ APIServer.on("error", (error) => {
     throw error;
   }
 
-  var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+  //var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
 
   switch (error.code) {
     case "EACCES":
-      console.error(bind + " requires elevated privileges");
+      console.error("requires elevated privileges");
       process.exit(1);
       break;
     case "EADDRINUSE":
-      console.error(bind + " is already in use");
+      console.error("is already in use");
       process.exit(1);
       break;
     default:
