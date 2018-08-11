@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taller JavaScript - Soluci&oacute;n item #2</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/undernode.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h1>ATM Manager</h1>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col flex justify-content-center">
+                                        <h2>Prestamos</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col" id="prestamos-list">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col flex justify-content-center">
+                                        <h2>Abonos</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col" id="abonos-list">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="button" id="solicitar">Solicitar</button>
+                    <button type="button" id="abonar">Abonar</button>
+                </div>
+                <div class="container mgt">
+                    <div class="row">
+                        <div class="col">
+                            Saldo:
+                        </div>
+                        <div class="col">
+                            <span id="saldo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/numeral.js"></script>
+    <script src="./js/atm.js"></script>
+</body>
+
+</html>

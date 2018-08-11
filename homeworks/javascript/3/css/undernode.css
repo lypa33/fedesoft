@@ -1,0 +1,89 @@
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#form {
+    width: auto;
+    position: relative;
+    margin: 0 auto;
+}
+
+#input-tarea
+{
+    width: 100%;
+    padding: 0.3em;
+    display: block;
+}
+.btn-container {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+.btn-container 
+button
+{
+    width: 100%;
+    margin: 0.3em;
+    padding: 0.5em;
+    text-transform: uppercase;
+    border:0;
+    border-radius: 0.2em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-container 
+button:nth-child(1)
+{
+    background-color: #303F9F;
+}
+.btn-container 
+button:nth-child(2)
+{
+    background-color:#4CAF50;
+}
+
+.mgt {
+    margin-top:3em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+}
+.task-container 
+button
+{
+    width: 100%;
+    margin: 0.3em;
+    padding: 0.5em;
+    text-transform: uppercase;
+    border:0;
+    border-radius: 0.2em;
+    color: #fff;
+    font-weight: bold;
+    background-color: #F44336;
+}
+
+#abonos-list, #prestamos-list {
+    min-height: 20em;
+    max-height: 20em;
+    overflow-y: scroll;
+}
+
+.data-user input {
+    padding: 0.5em;
+    width: 100%;
+}
